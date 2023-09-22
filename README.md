@@ -1,16 +1,45 @@
-# fun_nance_rewritten
+# Fun-Nance App
 
-A new Flutter project.
+Source code repository of *Fun-Nance App: Fun and Financial Task Manager from Parent to Kids* intended to be submitted in the final stage of IT Convert 2023 held by Jember State University.
 
-## Getting Started
+## How to run this project?
 
-This project is a starting point for a Flutter application.
+Clone the repository:
 
-A few resources to get you started if this is your first Flutter project:
+```
+git clone git@github.com:fzl-22/fun-nance-rewritten.git
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Navigate to the local repository:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+cd fun-nance-rewritten
+```
+
+Install all the project dependencies:
+
+```
+flutter pub get
+```
+
+Run the application:
+
+```
+flutter run
+```
+
+## How to build this project?
+
+You can build the project as a release or debug.
+
+```
+flutter build apk // or flutter build apk --debug
+```
+
+Then, you can find the built .apk in your `build/app/outputs/flutter-apk/` directory.
+
+## Team Member
+
+- Ivan Sholana
+- Ahmad Mu'min Faisal
+- Moch. Andi Divangga
