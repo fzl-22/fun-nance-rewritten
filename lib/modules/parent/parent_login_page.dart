@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fun_nance_rewritten/global/themes/color_theme.dart';
+import 'package:fun_nance_rewritten/global/widgets/buttons/google_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/submit_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/fields/highlighted_text_form_field.dart';
 import 'package:go_router/go_router.dart';
@@ -126,6 +127,8 @@ class ParentLoginPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyLarge,
                     textAlign: TextAlign.center,
                   ),
+                  const SizedBox(height: 12),
+                  GoogleButton(onPressed: () {}, label: "MASUK DENGAN GOOGLE",),
                 ],
               ),
             ),
