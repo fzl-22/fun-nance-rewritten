@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fun_nance_rewritten/global/themes/color_theme.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/google_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/submit_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/fields/highlighted_text_form_field.dart';
