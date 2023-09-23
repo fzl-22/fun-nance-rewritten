@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/submit_button.dart';
+import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -16,7 +17,7 @@ class WelcomePage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/images/welcome_cats.png',
+                  'assets/images/welcome/welcome_cats.png',
                   height: 165,
                 ),
                 const SizedBox(
@@ -55,7 +56,9 @@ class WelcomePage extends StatelessWidget {
                         height: 10,
                       ),
                       SubmitButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go("/parent/login");
+                        },
                         label: "ORANG TUA",
                         icon: IconlyBold.arrow_right_2,
                       ),
