@@ -2,13 +2,27 @@ import 'package:flutter/material.dart';
 
 const textTheme = TextTheme(
   displayLarge: TextStyle(
-    fontFamily: "Poppins",
     fontSize: 32,
     fontWeight: FontWeight.bold,
   ),
   displayMedium: TextStyle(
-    fontFamily: "Poppins",
     fontSize: 15,
     fontWeight: FontWeight.normal,
+  ),
+  titleLarge: TextStyle(
+    fontSize: 32,
+    fontWeight: FontWeight.bold,
+  ),
+  labelLarge: TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  ),
+  labelMedium: TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+  ),
+  bodyLarge: TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
   ),
 );

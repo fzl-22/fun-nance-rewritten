@@ -5,6 +5,8 @@ class ColorTheme {
 
   Color mainDarkerOrange = const Color.fromARGB(255, 241, 147, 54);
 
+  Color mainGrey = const Color(0xFFBCBCBC);
+  
   LinearGradient orangeGradient = const LinearGradient(
     colors: [
       Color.fromARGB(255, 243, 190, 138),
