@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fun_nance_rewritten/global/themes/color_theme.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/google_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/submit_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/fields/highlighted_text_form_field.dart';
+import 'package:fun_nance_rewritten/modules/parent/auth/widgets/auth_navigation_button.dart';
+import 'package:fun_nance_rewritten/modules/parent/auth/widgets/forgot_password_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
@@ -68,23 +69,7 @@ class ParentLoginPage extends StatelessWidget {
                     obscureText: true,
                   ),
                   const SizedBox(height: 12),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          minimumSize: Size.zero,
-                          foregroundColor: ColorTheme().mainLighterOrange,
-                          alignment: Alignment.centerRight,
-                          textStyle: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        onPressed: () {},
-                        child: const Text("lupa password?"),
-                      ),
-                    ],
-                  ),
+                  const ForgotPasswordButton(),
                   const SizedBox(height: 12),
                   SubmitButton(
                     onPressed: () {},
@@ -100,26 +85,10 @@ class ParentLoginPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Belum mempunyai akun? ",
-                        style: Theme.of(context).textTheme.bodyLarge,
-                      ),
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.zero,
-                          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                          minimumSize: Size.zero,
-                          foregroundColor: ColorTheme().mainLighterOrange,
-                          alignment: Alignment.centerRight,
-                          textStyle: Theme.of(context).textTheme.bodyLarge,
-                        ),
-                        onPressed: () {},
-                        child: const Text("daftar"),
-                      ),
-                    ],
+                  AuthNavigationButton(
+                    firstText: "Belum mempunyai akun?",
+                    secondText: "daftar",
+                    onPressed: () {},
                   ),
                   const SizedBox(height: 12),
                   Text(
@@ -128,7 +97,10 @@ class ParentLoginPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 12),
-                  GoogleButton(onPressed: () {}, label: "MASUK DENGAN GOOGLE",),
+                  GoogleButton(
+                    onPressed: () {},
+                    label: "MASUK DENGAN GOOGLE",
+                  ),
                 ],
               ),
             ),
