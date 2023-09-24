@@ -8,13 +8,14 @@ import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
 class ParentLoginPage extends StatelessWidget {
-  const ParentLoginPage({super.key});
+  ParentLoginPage({super.key});
+
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _emailHpController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController emailHpController = TextEditingController();
-    TextEditingController passwordController = TextEditingController();
-
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -55,28 +56,34 @@ class ParentLoginPage extends StatelessWidget {
             const SizedBox(height: 24),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  HighlightedTextFormField(
-                    hintText: "Email atau nomor hp",
-                    controller: emailHpController,
-                  ),
-                  const SizedBox(height: 24),
-                  HighlightedTextFormField(
-                    hintText: "password",
-                    controller: passwordController,
-                    obscureText: true,
-                  ),
-                  const SizedBox(height: 12),
-                  const ForgotPasswordButton(),
-                  const SizedBox(height: 12),
-                  SubmitButton(
-                    onPressed: () {},
-                    label: "MASUK",
-                    icon: IconlyBold.arrow_right_2,
-                  ),
-                ],
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    HighlightedTextFormField(
+                      hintText: "Email atau nomor hp",
+                      controller: _emailHpController,
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    const SizedBox(height: 24),
+                    HighlightedTextFormField(
+                      hintText: "password",
+                      controller: _passwordController,
+                      obscureText: true,
+                      keyboardType: TextInputType.visiblePassword,
+                      isPassword: true,
+                    ),
+                    const SizedBox(height: 12),
+                    const ForgotPasswordButton(),
+                    const SizedBox(height: 12),
+                    SubmitButton(
+                      onPressed: () {},
+                      label: "MASUK",
+                      icon: IconlyBold.arrow_right_2,
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 24),
@@ -88,7 +95,9 @@ class ParentLoginPage extends StatelessWidget {
                   AuthNavigationButton(
                     firstText: "Belum mempunyai akun?",
                     secondText: "daftar",
-                    onPressed: () {},
+                    onPressed: () {
+                      context.go("/parent/register");
+                    },
                   ),
                   const SizedBox(height: 12),
                   Text(
