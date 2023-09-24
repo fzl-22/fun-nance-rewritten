@@ -67,7 +67,7 @@ class ParentRegisterPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     HighlightedTextFormField(
-                      hintText: "Email atau nomor hp",
+                      hintText: "Email atau nomor HP",
                       controller: _emailHpController,
                       keyboardType: TextInputType.emailAddress,
                     ),
@@ -79,7 +79,7 @@ class ParentRegisterPage extends StatelessWidget {
                       keyboardType: TextInputType.visiblePassword,
                       isPassword: true,
                     ),
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 36),
                     SubmitButton(
                       onPressed: () {},
                       label: "DAFTAR",
