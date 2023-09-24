@@ -48,7 +48,9 @@ class WelcomePage extends StatelessWidget {
                   child: Column(
                     children: [
                       SubmitButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.go('/child/login');
+                        },
                         label: "ANAK",
                         icon: IconlyBold.arrow_right_2,
                       ),
