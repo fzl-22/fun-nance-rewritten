@@ -14,9 +14,11 @@ class ForgotPasswordButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             minimumSize: Size.zero,
-            foregroundColor: ColorTheme().mainLighterOrange,
+            foregroundColor: ColorTheme().mainDarkerOrange,
             alignment: Alignment.centerRight,
-            textStyle: Theme.of(context).textTheme.bodyLarge,
+            textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                  fontWeight: FontWeight.w500,
+                ),
           ),
           onPressed: () {},
           child: const Text("lupa password?"),

@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:fun_nance_rewritten/global/widgets/buttons/google_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/submit_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/fields/highlighted_text_form_field.dart';
 import 'package:fun_nance_rewritten/modules/parent/auth/widgets/auth_navigation_button.dart';
-import 'package:fun_nance_rewritten/modules/parent/auth/widgets/forgot_password_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
-class ParentLoginPage extends StatelessWidget {
-  ParentLoginPage({super.key});
+class ParentRegisterPage extends StatelessWidget {
+  ParentRegisterPage({super.key});
 
   final _formKey = GlobalKey<FormState>();
+  final TextEditingController _fullNameController = TextEditingController();
   final TextEditingController _emailHpController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -48,7 +47,7 @@ class ParentLoginPage extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(height: 12),
-                  Text("Yuk masuk terlebih dahulu ke akunmu!",
+                  Text("Buat akunmu terlebih dahulu yuk!",
                       style: Theme.of(context).textTheme.labelMedium),
                 ],
               ),
@@ -62,24 +61,28 @@ class ParentLoginPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     HighlightedTextFormField(
+                      hintText: "Nama lengkap",
+                      controller: _fullNameController,
+                      keyboardType: TextInputType.name,
+                    ),
+                    const SizedBox(height: 24),
+                    HighlightedTextFormField(
                       hintText: "Email atau nomor hp",
                       controller: _emailHpController,
                       keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 24),
                     HighlightedTextFormField(
-                      hintText: "password",
+                      hintText: "Password",
                       controller: _passwordController,
                       obscureText: true,
                       keyboardType: TextInputType.visiblePassword,
                       isPassword: true,
                     ),
-                    const SizedBox(height: 12),
-                    const ForgotPasswordButton(),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 24),
                     SubmitButton(
                       onPressed: () {},
-                      label: "MASUK",
+                      label: "DAFTAR",
                       icon: IconlyBold.arrow_right_2,
                     ),
                   ],
@@ -93,22 +96,11 @@ class ParentLoginPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   AuthNavigationButton(
-                    firstText: "Belum mempunyai akun?",
-                    secondText: "daftar",
+                    firstText: "Sudah mempunyai akun?",
+                    secondText: "login",
                     onPressed: () {
-                      context.go("/parent/register");
+                      context.go('/parent/login');
                     },
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    "atau",
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 12),
-                  GoogleButton(
-                    onPressed: () {},
-                    label: "MASUK DENGAN GOOGLE",
                   ),
                 ],
               ),
