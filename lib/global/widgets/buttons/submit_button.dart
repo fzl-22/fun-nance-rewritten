@@ -22,7 +22,7 @@ class SubmitButton extends StatelessWidget {
       ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20,),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16,),
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           foregroundColor: Colors.white,

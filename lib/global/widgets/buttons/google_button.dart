@@ -26,7 +26,7 @@ class GoogleButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(
               horizontal: 16,
-              vertical: 16,
+              vertical: 12,
             ),
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
