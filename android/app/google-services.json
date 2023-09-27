@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695010240334",
+    "project_id": "fun-nance",
+    "storage_bucket": "fun-nance.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695010240334:android:bde08a5690ccf6c1f2e01f",
+        "android_client_info": {
+          "package_name": "com.example.fun_nance_rewritten"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBivVVqetrCnwVG9rH8h8jmVX5bPRGgNeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
