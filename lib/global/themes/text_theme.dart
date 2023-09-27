@@ -13,6 +13,10 @@ const textTheme = TextTheme(
     fontSize: 32,
     fontWeight: FontWeight.bold,
   ),
+  titleSmall: TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  ),
   labelLarge: TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
