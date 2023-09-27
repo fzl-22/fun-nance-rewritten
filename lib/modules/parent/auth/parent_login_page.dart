@@ -68,7 +68,7 @@ class ParentLoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     HighlightedTextFormField(
-                      hintText: "password",
+                      hintText: "Password",
                       controller: _passwordController,
                       obscureText: true,
                       keyboardType: TextInputType.visiblePassword,
@@ -78,7 +78,9 @@ class ParentLoginPage extends StatelessWidget {
                     const ForgotPasswordButton(),
                     const SizedBox(height: 12),
                     SubmitButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go("/parent/home");
+                      },
                       label: "MASUK",
                       icon: IconlyBold.arrow_right_2,
                     ),
