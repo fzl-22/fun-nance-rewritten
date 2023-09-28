@@ -22,6 +22,14 @@ class OutlinedTextFormField extends StatefulWidget {
 
 class _OutlinedTextFormFieldState extends State<OutlinedTextFormField> {
   @override
+  void initState() {
+    if (widget.initialValue != "") {
+      widget.controller.text = widget.initialValue;
+    }
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
