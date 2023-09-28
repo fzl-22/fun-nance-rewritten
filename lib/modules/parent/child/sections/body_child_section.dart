@@ -5,6 +5,7 @@ import 'package:fun_nance_rewritten/global/providers/child_provider.dart';
 import 'package:fun_nance_rewritten/global/utils/form_util.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/tile_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/tiles/item_tile.dart';
+import 'package:fun_nance_rewritten/modules/parent/child/parent_child_detail_page.dart';
 
 class BodyChildSection extends ConsumerStatefulWidget {
   const BodyChildSection({
@@ -61,7 +62,17 @@ class _BodyChildSectionState extends ConsumerState<BodyChildSection> {
                       title: childList[index].fullName,
                       subtitle:
                           "Klik untuk mengetahui performa ${_getFirstName(childList[index])}",
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return ParentChildDetailPage(
+                                child: childList[index],
+                              );
+                            },
+                          ),
+                        );
+                      },
                     );
                   },
                   separatorBuilder: (context, index) {
