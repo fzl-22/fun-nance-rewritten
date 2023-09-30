@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fun_nance_rewritten/global/services/firebase_service.dart';
 
-class ParentNotificationPage extends StatelessWidget {
+class ParentNotificationPage extends ConsumerWidget {
   const ParentNotificationPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
       body: Center(
-        child: Center(
-          child: Text("Ini halaman notifikasi..."),
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () async {
+                await signOutUser();
+              },
+              child: const Text("Sign Out"),
+            ),
+          ],
         ),
       ),
     );

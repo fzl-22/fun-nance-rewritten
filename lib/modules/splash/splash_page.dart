@@ -9,10 +9,14 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseAuth.instance.authStateChanges(),
+      stream: FirebaseAuth.instance.userChanges(),
       builder: (context, snapshot) {
-        if(snapshot.hasData){
+        if (snapshot.hasData) {
           return const ParentHomePage();
+        }
+        if (snapshot.hasError) {
+          // Handle any errors.
+          return Text('Error: ${snapshot.error}');
         }
         return const WelcomePage();
       },

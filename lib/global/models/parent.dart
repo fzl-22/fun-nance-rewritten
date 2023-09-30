@@ -12,4 +12,15 @@ class Parent {
       : id = uuid.v4(),
         createdAt = DateTime.now(),
         updatedAt = DateTime.now();
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'fullName': fullName,
+      'email': email,
+      'password': password,
+      'createdAt': createdAt.toLocal().toString(),
+      'updatedAt': updatedAt.toLocal().toString(),
+    };
+  }
 }

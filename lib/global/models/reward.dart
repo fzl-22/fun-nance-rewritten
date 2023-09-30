@@ -17,4 +17,16 @@ class Reward {
   })  : id = uuid.v4(),
         createdAt = DateTime.now(),
         updatedAt = DateTime.now();
+
+  Map<String, dynamic> toJSON() {
+    return {
+      'id': id,
+      'title': title,
+      'childName': childName,
+      'imageUrl': imageUrl,
+      'price': price,
+      'createdAt': createdAt.toLocal().toString(),
+      'updatedAt': updatedAt.toLocal().toString(),
+    };
+  }
 }

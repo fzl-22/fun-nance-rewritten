@@ -7,23 +7,23 @@ import 'package:fun_nance_rewritten/global/widgets/buttons/tile_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/tiles/item_tile.dart';
 import 'package:fun_nance_rewritten/modules/parent/child/parent_child_detail_page.dart';
 
-class BodyChildSection extends ConsumerStatefulWidget {
-  const BodyChildSection({
+class ParentBodyChildSection extends ConsumerStatefulWidget {
+  const ParentBodyChildSection({
     super.key,
   });
 
   @override
-  ConsumerState<BodyChildSection> createState() => _BodyChildSectionState();
+  ConsumerState<ParentBodyChildSection> createState() => _ParentBodyChildSectionState();
 }
 
-class _BodyChildSectionState extends ConsumerState<BodyChildSection> {
+class _ParentBodyChildSectionState extends ConsumerState<ParentBodyChildSection> {
   String _getFirstName(Child child) {
     return child.fullName.split(' ')[0];
   }
 
   @override
   Widget build(BuildContext context) {
-    final childList = ref.watch(childListProvider);
+    final childList = ref.watch(childListProvider).where((child) => child.fullName != "Semua",).toList();
 
     return Expanded(
       child: Card(
