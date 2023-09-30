@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
 import 'package:fun_nance_rewritten/modules/parent/profile/parent_profile_page.dart';
 
-class ParentHeaderSection extends StatelessWidget {
-  final String parentName;
+class ChildHeaderSection extends StatelessWidget {
+  final String childName;
   final String description;
 
-  const ParentHeaderSection({
+  const ChildHeaderSection({
     super.key,
-    required this.parentName,
+    required this.childName,
     required this.description,
   });
 
   String get _firstName {
-    return parentName.split(" ").toList()[0];
+    return childName.split(" ").toList()[0];
   }
 
   @override
@@ -34,7 +34,7 @@ class ParentHeaderSection extends StatelessWidget {
                   );
                 },
                 child: ProfilePicture(
-                  name: parentName,
+                  name: childName,
                   radius: 24,
                   fontsize: 16,
                   count: 2,

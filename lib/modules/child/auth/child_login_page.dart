@@ -81,7 +81,9 @@ class ChildLoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     SubmitButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.go('/child/home');
+                      },
                       label: "MASUK",
                       icon: IconlyBold.arrow_right_2,
                     ),

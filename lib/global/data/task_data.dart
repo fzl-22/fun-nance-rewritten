@@ -34,14 +34,14 @@ List<Task> taskData = [
       const Duration(days: 3),
     ),
   ),
-  Task(
-    title: "Bersihkan kamar mandi",
-    childName: "Ivan Sholana",
-    description: "Bersihkan kamar mandinya ya kakak",
-    reward: 5000,
-    status: TaskStatus.done,
-    deadline: DateTime.now().add(
-      const Duration(days: 3),
-    ),
-  ),
+  // Task(
+  //   title: "Bersihkan kamar mandi",
+  //   childName: "Ivan Sholana",
+  //   description: "Bersihkan kamar mandinya ya kakak",
+  //   reward: 5000,
+  //   status: TaskStatus.done,
+  //   deadline: DateTime.now().add(
+  //     const Duration(days: 3),
+  //   ),
+  // ),
 ];

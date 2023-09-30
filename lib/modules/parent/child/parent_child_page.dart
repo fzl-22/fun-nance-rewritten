@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fun_nance_rewritten/global/themes/color_theme.dart';
-import 'package:fun_nance_rewritten/modules/parent/child/sections/body_child_section.dart';
+import 'package:fun_nance_rewritten/modules/parent/child/sections/parent_body_child_section.dart';
 import 'package:fun_nance_rewritten/modules/parent/sections/parent_header_section.dart';
 
 class ParentChildPage extends StatelessWidget {
@@ -22,7 +22,7 @@ class ParentChildPage extends StatelessWidget {
               description: "Yuk lihat perkembangan dari anakmu",
             ),
             SizedBox(height: 24),
-            BodyChildSection(),
+            ParentBodyChildSection(),
           ],
         ),
       ),

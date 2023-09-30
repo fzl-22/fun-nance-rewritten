@@ -13,6 +13,10 @@ const textTheme = TextTheme(
     fontSize: 32,
     fontWeight: FontWeight.bold,
   ),
+  titleMedium: TextStyle(
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+  ),
   titleSmall: TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,

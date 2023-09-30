@@ -1,7 +1,9 @@
-import 'package:fun_nance_rewritten/modules/child/child_login_page.dart';
+import 'package:fun_nance_rewritten/modules/child/auth/child_login_page.dart';
+import 'package:fun_nance_rewritten/modules/child/home/child_home_page.dart';
 import 'package:fun_nance_rewritten/modules/parent/auth/parent_login_page.dart';
 import 'package:fun_nance_rewritten/modules/parent/auth/parent_register_page.dart';
 import 'package:fun_nance_rewritten/modules/parent/home/parent_home_page.dart';
+import 'package:fun_nance_rewritten/modules/parent/profile/parent_profile_page.dart';
 import 'package:fun_nance_rewritten/modules/splash/splash_page.dart';
 import 'package:fun_nance_rewritten/modules/welcome/welcome_page.dart';
 import 'package:go_router/go_router.dart';
@@ -35,9 +37,19 @@ final routerConfig = GoRouter(
       builder: (context, state) => const ParentHomePage(),
     ),
     GoRoute(
+      name: "parent-profile",
+      path: "/parent/profile",
+      builder: (context, state) => const ParentProfilePage(),
+    ),
+    GoRoute(
       name: "child-login",
       path: "/child/login",
       builder: (context, state) => ChildLoginPage(),
+    ),
+    GoRoute(
+      name: "child-home",
+      path: "/child/home",
+      builder: (context, state) => const ChildHomePage(),
     ),
   ],
 );

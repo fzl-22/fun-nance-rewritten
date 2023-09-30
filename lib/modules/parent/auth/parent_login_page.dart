@@ -7,11 +7,18 @@ import 'package:fun_nance_rewritten/modules/parent/auth/widgets/forgot_password_
 import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
-class ParentLoginPage extends StatelessWidget {
-  ParentLoginPage({super.key});
+class ParentLoginPage extends StatefulWidget {
+  const ParentLoginPage({super.key});
 
+  @override
+  State<ParentLoginPage> createState() => _ParentLoginPageState();
+}
+
+class _ParentLoginPageState extends State<ParentLoginPage> {
   final _formKey = GlobalKey<FormState>();
+
   final TextEditingController _emailHpController = TextEditingController();
+
   final TextEditingController _passwordController = TextEditingController();
 
   @override

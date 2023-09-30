@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fun_nance_rewritten/global/themes/color_theme.dart';
-import 'package:fun_nance_rewritten/modules/parent/reward/sections/parent_body_reward_section.dart';
-import 'package:fun_nance_rewritten/modules/parent/sections/parent_header_section.dart';
+import 'package:fun_nance_rewritten/modules/child/sections/child_header_section.dart';
+import 'package:fun_nance_rewritten/modules/child/task/sections/child_body_task_section.dart';
 
-class ParentRewardPage extends StatelessWidget {
-  const ParentRewardPage({super.key});
+class ChildTaskPage extends StatelessWidget {
+  const ChildTaskPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +17,12 @@ class ParentRewardPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(height: 24),
-            ParentHeaderSection(
-              parentName: "Mochamad Andi Divangga",
-              description: "Yuk lihat perkembangan dari anakmu",
+            ChildHeaderSection(
+              childName: "Ahmad Mu'min Faisal",
+              description: "Jangan  lupa kerjakan tugasnya yaa",
             ),
             SizedBox(height: 24),
-            ParentBodyRewardSection(),
+            ChildBodyTaskSection(),
           ],
         ),
       ),

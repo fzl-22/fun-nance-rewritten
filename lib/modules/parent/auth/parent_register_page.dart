@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fun_nance_rewritten/global/models/parent.dart';
+import 'package:fun_nance_rewritten/global/services/firebase_service.dart';
 import 'package:fun_nance_rewritten/global/widgets/buttons/submit_button.dart';
 import 'package:fun_nance_rewritten/global/widgets/fields/highlighted_text_form_field.dart';
 import 'package:fun_nance_rewritten/modules/parent/auth/widgets/auth_navigation_button.dart';
@@ -81,7 +83,16 @@ class ParentRegisterPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 36),
                     SubmitButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        registerUser(
+                          context,
+                          Parent(
+                            fullName: _fullNameController.text,
+                            email: _emailHpController.text,
+                            password: _passwordController.text,
+                          ),
+                        );
+                      },
                       label: "DAFTAR",
                       icon: IconlyBold.arrow_right_2,
                     ),
