@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:fun_nance_rewritten/global/models/parent.dart';
 import 'package:fun_nance_rewritten/global/models/reward.dart';
 import 'package:go_router/go_router.dart';
-import 'package:path/path.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:path/path.dart';
 
 Future<void> registerUser(BuildContext context, Parent parent) async {
   try {
