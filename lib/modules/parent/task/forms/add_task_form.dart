@@ -174,7 +174,6 @@ class _AddTaskFormState extends ConsumerState<AddTaskForm> {
               onChanged: (value) {
                 setState(() {
                   _selectedValue = value;
-                  print(_selectedValue);
                 });
               },
             ),
@@ -204,9 +203,6 @@ class _AddTaskFormState extends ConsumerState<AddTaskForm> {
             Center(
               child: ModalButton(
                 onPressed: () {
-                  print("IN CALLBACK");
-                  print(_selectedValue);
-
                   Navigator.of(context).pop(
                     Task(
                       title: _titleController.text,

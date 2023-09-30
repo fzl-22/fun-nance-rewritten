@@ -24,7 +24,7 @@ final routerConfig = GoRouter(
     GoRoute(
       name: "parent-login",
       path: "/parent/login",
-      builder: (context, state) => ParentLoginPage(),
+      builder: (context, state) => const ParentLoginPage(),
     ),
     GoRoute(
       name: "parent-register",

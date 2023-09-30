@@ -83,9 +83,7 @@ class _EditChildFormState extends State<EditChildForm> {
             const SizedBox(height: 24),
             Center(
               child: ModalButton(
-                onPressed: () {
-                  print(childNameController.text);
-                },
+                onPressed: () {},
                 label: "UBAH DATA",
               ),
             ),

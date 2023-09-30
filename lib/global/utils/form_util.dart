@@ -40,10 +40,6 @@ void showAddRewardForm(BuildContext context, WidgetRef ref) async {
     return;
   }
 
-  print("IN BODY REWARD===================");
-  print(newReward.childName);
-  print(newReward.title);
-
   ref.watch(rewardListProvider.notifier).addReward(newReward);
 }
 
@@ -60,8 +56,7 @@ void showAddTaskForm(BuildContext context, WidgetRef ref) async {
   if (newTask == null) {
     return;
   }
-  print(newTask.title);
-  print(newTask.childName);
+  
   ref.watch(taskListProvider.notifier).addTask(newTask);
 }
 

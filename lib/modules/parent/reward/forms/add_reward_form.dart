@@ -132,7 +132,6 @@ class _AddRewardFormState extends ConsumerState<AddRewardForm> {
                 onChanged: (value) {
                   setState(() {
                     _selectedValue = value;
-                    print(_selectedValue);
                   });
                 },
               ),
@@ -170,8 +169,9 @@ class _AddRewardFormState extends ConsumerState<AddRewardForm> {
                 ),
               ),
               const SizedBox(height: 24),
-              Center(child: ModalButton(
-                onPressed:  () async {
+              Center(
+                child: ModalButton(
+                  onPressed: () async {
                     final imageUrl = await uploadImage(_imageFile!);
                     if (context.mounted) {
                       Navigator.of(context).pop(
@@ -184,9 +184,9 @@ class _AddRewardFormState extends ConsumerState<AddRewardForm> {
                       );
                     }
                   },
-                label: "TAMBAH HADIAH",
-              ),),
-              
+                  label: "TAMBAH HADIAH",
+                ),
+              ),
             ],
           ),
         ),
