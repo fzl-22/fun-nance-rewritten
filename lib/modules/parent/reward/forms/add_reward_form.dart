@@ -6,6 +6,7 @@ import 'package:fun_nance_rewritten/global/models/child.dart';
 import 'package:fun_nance_rewritten/global/models/reward.dart';
 import 'package:fun_nance_rewritten/global/providers/child_provider.dart';
 import 'package:fun_nance_rewritten/global/services/firebase_service.dart';
+import 'package:fun_nance_rewritten/global/widgets/buttons/modal_button.dart.dart';
 import 'package:fun_nance_rewritten/global/widgets/fields/outlined_text_form_field.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -169,16 +170,8 @@ class _AddRewardFormState extends ConsumerState<AddRewardForm> {
                 ),
               ),
               const SizedBox(height: 24),
-              Center(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Theme.of(context).colorScheme.primary,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 11,
-                      horizontal: 19,
-                    ),
-                  ),
-                  onPressed: () async {
+              Center(child: ModalButton(
+                onPressed:  () async {
                     final imageUrl = await uploadImage(_imageFile!);
                     if (context.mounted) {
                       Navigator.of(context).pop(
@@ -191,9 +184,9 @@ class _AddRewardFormState extends ConsumerState<AddRewardForm> {
                       );
                     }
                   },
-                  child: const Text("TAMBAH REWARD"),
-                ),
-              ),
+                label: "TAMBAH HADIAH",
+              ),),
+              
             ],
           ),
         ),
