@@ -7,7 +7,7 @@ Source code repository of *Fun-Nance App: Fun and Financial Task Manager from Pa
 Clone the repository:
 
 ```
-git clone git@github.com:fzl-22/fun-nance-rewritten.git
+git clone git@github.com:fzl-22/fun-nance-rewritten.git --depth=1
 ```
 
 Navigate to the local repository:
