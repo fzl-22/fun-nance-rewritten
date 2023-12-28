@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fun_nance_rewritten/global/configs/router_config.dart';
-import 'package:fun_nance_rewritten/global/themes/color_theme.dart';
-import 'package:fun_nance_rewritten/global/themes/text_theme.dart';
+import 'package:fun_nance_rewritten/core/configs/router_config.dart';
+import 'package:fun_nance_rewritten/core/themes/color_theme.dart';
+import 'package:fun_nance_rewritten/core/themes/text_theme.dart';
 
 class FunNanceApp extends StatelessWidget {
   const FunNanceApp({super.key});
