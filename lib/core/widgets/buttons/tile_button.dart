@@ -19,7 +19,7 @@ class TileButton extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(
-          color: ColorTheme().mainLighterOrange,
+          color: ColorTheme.mainLighterOrange,
         ),
       ),
       tileColor: const Color(0xFFFFEDBF),
@@ -43,7 +43,7 @@ class TileButton extends StatelessWidget {
         child: CircleAvatar(
           radius: 21.5,
           backgroundColor: Colors.white,
-          foregroundColor: ColorTheme().mainLighterOrange,
+          foregroundColor: ColorTheme.mainLighterOrange,
           child: const Icon(Icons.add),
         ),
       ),

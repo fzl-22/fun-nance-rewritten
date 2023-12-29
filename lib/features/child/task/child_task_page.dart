@@ -11,7 +11,7 @@ class ChildTaskPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: ColorTheme().warmGradient,
+          gradient: ColorTheme.warmGradient,
         ),
         child: const Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

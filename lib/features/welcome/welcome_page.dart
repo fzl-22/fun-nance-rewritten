@@ -59,7 +59,7 @@ class WelcomePage extends StatelessWidget {
                       ),
                       SubmitButton(
                         onPressed: () {
-                          context.go("/parent/login");
+                          context.push("/parent/login");
                         },
                         label: "ORANG TUA",
                         icon: IconlyBold.arrow_right_2,

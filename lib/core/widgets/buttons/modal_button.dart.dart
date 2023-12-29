@@ -15,7 +15,7 @@ class ModalButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: ColorTheme().orangeGradient,
+        gradient: ColorTheme.orangeGradient,
         borderRadius: BorderRadius.circular(16),
       ),
       child: ElevatedButton(

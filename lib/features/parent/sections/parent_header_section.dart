@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_profile_picture/flutter_profile_picture.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fun_nance_rewritten/core/providers/parent_provider.dart';
 import 'package:fun_nance_rewritten/features/parent/profile/parent_profile_page.dart';
+import 'package:go_router/go_router.dart';
 
-class ParentHeaderSection extends StatelessWidget {
+class ParentHeaderSection extends ConsumerWidget {
   final String parentName;
   final String description;
 
@@ -17,7 +20,7 @@ class ParentHeaderSection extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
@@ -33,11 +36,18 @@ class ParentHeaderSection extends StatelessWidget {
                     ),
                   );
                 },
-                child: ProfilePicture(
-                  name: parentName,
-                  radius: 24,
-                  fontsize: 16,
-                  count: 2,
+                child: InkWell(
+                  onTap: () {
+                    ref.read(parentProvider.notifier).logoutParentUser();
+
+                    context.go("/");
+                  },
+                  child: ProfilePicture(
+                    name: parentName,
+                    radius: 24,
+                    fontsize: 16,
+                    count: 2,
+                  ),
                 ),
               ),
               const SizedBox(

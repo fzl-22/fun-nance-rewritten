@@ -1,26 +1,35 @@
-import 'package:fun_nance_rewritten/core/utils/uuid_util.dart';
-
 class Parent {
-  late String id;
-  late String fullName;
-  late String email;
-  late String password;
-  late DateTime createdAt;
-  late DateTime updatedAt;
+  final String id;
+  final String fullName;
+  final String email;
+  final DateTime createdAt;
+  final DateTime modifiedAt;
 
-  Parent({required this.fullName, required this.email, required this.password})
-      : id = uuid.v4(),
-        createdAt = DateTime.now(),
-        updatedAt = DateTime.now();
+  const Parent({
+    required this.id,
+    required this.fullName,
+    required this.email,
+    required this.createdAt,
+    required this.modifiedAt,
+  });
 
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toMap() {
     return {
-      'id': id,
-      'fullName': fullName,
+      'parent_id': id,
+      'fullname': fullName,
       'email': email,
-      'password': password,
-      'createdAt': createdAt.toLocal().toString(),
-      'updatedAt': updatedAt.toLocal().toString(),
+      'created_at': createdAt.toLocal().toString(),
+      'modified_at': modifiedAt.toLocal().toString(),
     };
+  }
+
+  factory Parent.fromMap(Map<String, dynamic> map) {
+    return Parent(
+      id: map['parent_id'] as String,
+      fullName: map['fullname'] as String,
+      email: map['email'] as String,
+      createdAt: DateTime.parse(map['created_at'] as String).toLocal(),
+      modifiedAt: DateTime.parse(map['modified_at'] as String).toLocal(),
+    );
   }
 }

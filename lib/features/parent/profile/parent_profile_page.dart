@@ -27,7 +27,7 @@ class ParentProfilePage extends StatelessWidget {
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: ColorTheme().warmGradient,
+          gradient: ColorTheme.warmGradient,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

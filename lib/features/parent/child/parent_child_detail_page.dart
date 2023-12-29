@@ -18,7 +18,7 @@ class ParentChildDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: ColorTheme().warmGradient,
+        gradient: ColorTheme.warmGradient,
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,

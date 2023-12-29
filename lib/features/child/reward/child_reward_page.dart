@@ -12,7 +12,7 @@ class ChildRewardPage extends StatelessWidget {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
-          gradient: ColorTheme().warmGradient,
+          gradient: ColorTheme.warmGradient,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,

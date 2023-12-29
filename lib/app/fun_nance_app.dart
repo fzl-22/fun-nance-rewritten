@@ -14,8 +14,8 @@ class FunNanceApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
-            seedColor: ColorTheme().mainDarkerOrange,
-            primary: ColorTheme().mainDarkerOrange,
+            seedColor: ColorTheme.mainDarkerOrange,
+            primary: ColorTheme.mainDarkerOrange,
           ),
           fontFamily: "Poppins",
           textTheme: textTheme,

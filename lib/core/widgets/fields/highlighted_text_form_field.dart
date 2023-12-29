@@ -52,19 +52,19 @@ class _HighlightedTextFormFieldState extends State<HighlightedTextFormField> {
                 child: Icon(
                   isVisible ? IconlyBold.show : IconlyBold.hide,
                   size: 24,
-                  color: ColorTheme().mainLighterOrange,
+                  color: ColorTheme.mainLighterOrange,
                 ),
               )
             : null,
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorTheme().mainGrey,
+            color: ColorTheme.mainGrey,
             width: 2,
           ),
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorTheme().mainDarkerOrange,
+            color: ColorTheme.mainDarkerOrange,
             width: 2,
           ),
         ),
@@ -72,7 +72,7 @@ class _HighlightedTextFormFieldState extends State<HighlightedTextFormField> {
         hintStyle: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
-          color: ColorTheme().mainGrey,
+          color: ColorTheme.mainGrey,
         ),
       ),
       controller: widget.controller,

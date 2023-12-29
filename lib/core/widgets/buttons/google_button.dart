@@ -19,7 +19,7 @@ class GoogleButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         color: Colors.white,
         border: Border.all(
-          color: ColorTheme().mainDarkerOrange,
+          color: ColorTheme.mainDarkerOrange,
         ),
       ),
       child: ElevatedButton(
@@ -30,7 +30,7 @@ class GoogleButton extends StatelessWidget {
             ),
             backgroundColor: Colors.transparent,
             shadowColor: Colors.transparent,
-            foregroundColor: ColorTheme().mainDarkerOrange,
+            foregroundColor: ColorTheme.mainDarkerOrange,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),

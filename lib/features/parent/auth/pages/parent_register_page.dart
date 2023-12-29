@@ -1,35 +1,69 @@
 import 'package:flutter/material.dart';
-import 'package:fun_nance_rewritten/core/widgets/buttons/google_button.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fun_nance_rewritten/core/providers/parent_provider.dart';
 import 'package:fun_nance_rewritten/core/widgets/buttons/submit_button.dart';
 import 'package:fun_nance_rewritten/core/widgets/fields/highlighted_text_form_field.dart';
+import 'package:fun_nance_rewritten/core/widgets/toast/toast.dart';
 import 'package:fun_nance_rewritten/features/parent/auth/widgets/auth_navigation_button.dart';
-import 'package:fun_nance_rewritten/features/parent/auth/widgets/forgot_password_button.dart';
 import 'package:go_router/go_router.dart';
 import 'package:iconly/iconly.dart';
 
-class ParentLoginPage extends StatefulWidget {
-  const ParentLoginPage({super.key});
+class ParentRegisterPage extends ConsumerStatefulWidget {
+  const ParentRegisterPage({super.key});
 
   @override
-  State<ParentLoginPage> createState() => _ParentLoginPageState();
+  ConsumerState<ParentRegisterPage> createState() => _ParentRegisterPageState();
 }
 
-class _ParentLoginPageState extends State<ParentLoginPage> {
-  final _formKey = GlobalKey<FormState>();
+class _ParentRegisterPageState extends ConsumerState<ParentRegisterPage> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController fullNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
-  final TextEditingController _emailHpController = TextEditingController();
+  void onRegisterParent() async {
+    formKey.currentState!.save();
 
-  final TextEditingController _passwordController = TextEditingController();
+    if (!formKey.currentState!.validate()) {
+      return;
+    }
+
+    final fullName = fullNameController.text;
+    final email = emailController.text;
+    final password = passwordController.text;
+
+    String? errorMessage =
+        await ref.read(parentProvider.notifier).registerParentUser(
+              fullName: fullName,
+              email: email,
+              password: password,
+            );
+
+    if (errorMessage != null) {
+      if (errorMessage.contains("email-already-in-use")) {
+        showToast(message: "Email sudah pernah digunakan");
+        return;
+      }
+
+      showToast(message: errorMessage);
+      return;
+    }
+
+    if (context.mounted) {
+      context.go("/parent/home");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final parentNotifier = ref.watch(parentProvider);
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         forceMaterialTransparency: true,
         leading: IconButton(
           onPressed: () {
-            context.go("/welcome");
+            context.pop();
           },
           icon: const Icon(
             IconlyLight.arrow_left_2,
@@ -55,7 +89,7 @@ class _ParentLoginPageState extends State<ParentLoginPage> {
                     style: Theme.of(context).textTheme.titleLarge,
                   ),
                   const SizedBox(height: 12),
-                  Text("Yuk masuk terlebih dahulu ke akunmu!",
+                  Text("Buat akunmu terlebih dahulu yuk!",
                       style: Theme.of(context).textTheme.labelMedium),
                 ],
               ),
@@ -64,32 +98,35 @@ class _ParentLoginPageState extends State<ParentLoginPage> {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Form(
-                key: _formKey,
+                key: formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     HighlightedTextFormField(
-                      hintText: "Email atau nomor hp",
-                      controller: _emailHpController,
+                      hintText: "Nama lengkap",
+                      controller: fullNameController,
+                      keyboardType: TextInputType.name,
+                    ),
+                    const SizedBox(height: 24),
+                    HighlightedTextFormField(
+                      hintText: "Email",
+                      controller: emailController,
                       keyboardType: TextInputType.emailAddress,
                     ),
                     const SizedBox(height: 24),
                     HighlightedTextFormField(
                       hintText: "Password",
-                      controller: _passwordController,
+                      controller: passwordController,
                       obscureText: true,
                       keyboardType: TextInputType.visiblePassword,
                       isPassword: true,
                     ),
-                    const SizedBox(height: 12),
-                    const ForgotPasswordButton(),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: 36),
                     SubmitButton(
-                      onPressed: () {
-                        context.go("/parent/home");
-                      },
-                      label: "MASUK",
+                      onPressed: onRegisterParent,
+                      label: "DAFTAR",
                       icon: IconlyBold.arrow_right_2,
+                      isLoading: parentNotifier.isLoading,
                     ),
                   ],
                 ),
@@ -102,22 +139,11 @@ class _ParentLoginPageState extends State<ParentLoginPage> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   AuthNavigationButton(
-                    firstText: "Belum mempunyai akun?",
-                    secondText: "daftar",
+                    firstText: "Sudah mempunyai akun?",
+                    secondText: "login",
                     onPressed: () {
-                      context.go("/parent/register");
+                      context.push('/parent/login');
                     },
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    "atau",
-                    style: Theme.of(context).textTheme.bodyLarge,
-                    textAlign: TextAlign.center,
-                  ),
-                  const SizedBox(height: 12),
-                  GoogleButton(
-                    onPressed: () {},
-                    label: "MASUK DENGAN GOOGLE",
                   ),
                 ],
               ),

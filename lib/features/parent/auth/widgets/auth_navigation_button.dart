@@ -27,7 +27,7 @@ class AuthNavigationButton extends StatelessWidget {
             padding: EdgeInsets.zero,
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             minimumSize: Size.zero,
-            foregroundColor: ColorTheme().mainDarkerOrange,
+            foregroundColor: ColorTheme.mainDarkerOrange,
             alignment: Alignment.centerRight,
             textStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   fontWeight: FontWeight.w500,

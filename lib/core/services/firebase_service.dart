@@ -3,38 +3,9 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fun_nance_rewritten/core/models/parent.dart';
 import 'package:fun_nance_rewritten/core/models/reward.dart';
-import 'package:go_router/go_router.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:path/path.dart';
-
-Future<void> registerUser(BuildContext context, Parent parent) async {
-  try {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: parent.email,
-      password: parent.password,
-    );
-
-    await FirebaseFirestore.instance.collection('parents').add(
-          parent.toJson(),
-        );
-
-    if (context.mounted) {
-      context.go('/parent/login');
-    }
-  } catch (error) {
-    // Handle the error appropriately.
-    // For example, you could display an error message to the user or retry the operation.
-    if (context.mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('An error occurred while registering the user.'),
-        ),
-      );
-    }
-  }
-}
 
 Future<void> signOutUser() async {
   await FirebaseAuth.instance.signOut();
