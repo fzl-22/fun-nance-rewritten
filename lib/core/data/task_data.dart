@@ -13,7 +13,7 @@ List<Task> taskData = [
     ),
   ),
   Task(
-    title: "Menyiapkan pelajaran sekolah",
+    title: "Belajar Yuk",
     childName: "Ahmad Mu'min Faisal",
     description:
         "Sekolah besok jangan lupa masukin pelajaran PKN dan Matematika yaa, kak.",

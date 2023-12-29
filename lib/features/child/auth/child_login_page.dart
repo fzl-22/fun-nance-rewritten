@@ -67,7 +67,7 @@ class ChildLoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 24),
                     HighlightedTextFormField(
-                      hintText: "Email atau nomor HP",
+                      hintText: "Email",
                       controller: _parentEmailHpController,
                       keyboardType: TextInputType.emailAddress,
                     ),

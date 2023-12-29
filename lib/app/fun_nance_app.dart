@@ -10,6 +10,8 @@ class FunNanceApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        debugShowMaterialGrid: false,
         title: 'Fun-Nance',
         theme: ThemeData(
           useMaterial3: true,

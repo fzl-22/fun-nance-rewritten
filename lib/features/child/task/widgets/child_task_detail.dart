@@ -95,7 +95,12 @@ class _ChildTaskDetailState extends ConsumerState<ChildTaskDetail> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          widget.task.deadline.difference(timeNow).toString().split(":").getRange(0, 2).join(":"),
+                          widget.task.deadline
+                              .difference(timeNow)
+                              .toString()
+                              .split(":")
+                              .getRange(0, 2)
+                              .join(":"),
                           style:
                               Theme.of(context).textTheme.titleLarge!.copyWith(
                                     color: widget.task.statusColor,
@@ -182,32 +187,34 @@ class _ChildTaskDetailState extends ConsumerState<ChildTaskDetail> {
                 height: 12,
               )
             ],
-            InkWell(
-              onTap: _getImageFromCamera,
-              child: Card(
-                margin: const EdgeInsets.all(0),
-                elevation: 4,
-                child: Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(12),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.add_circle_outline,
-                        color: Colors.red,
-                      ),
-                      const SizedBox(width: 8),
-                      Text(
-                        "Tambah bukti",
-                        style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                      ),
-                    ],
+            if (_imageFile == null)
+              InkWell(
+                onTap: _getImageFromCamera,
+                child: Card(
+                  margin: const EdgeInsets.all(0),
+                  elevation: 4,
+                  child: Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(12),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.add_circle_outline,
+                          color: Colors.red,
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          "Tambah bukti",
+                          style:
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
             if (widget.task.status == TaskStatus.notYet) ...[
               const Spacer(),
               Container(
@@ -225,6 +232,10 @@ class _ChildTaskDetailState extends ConsumerState<ChildTaskDetail> {
                   ),
                 ),
                 child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      foregroundColor: Colors.white),
                   onPressed: () {
                     setState(() {
                       ref
